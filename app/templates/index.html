@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="ENTER THE CITY NAME" id=""> <button type="submit">SEARCH</button>
+    </form>
+    {{data}}
+    {% for i in data.weather %}
+    <p>MAIN : {{i.main}}</p>
+    <p>DESCRIPTION : {{i.description}}</p>
+    {% endfor %}
+    <p> TEMPERACTURE {{data.main.temp}}</p>
+    <p> WIND {{data.wind.speed}}</p>
+</body>
+</html>
